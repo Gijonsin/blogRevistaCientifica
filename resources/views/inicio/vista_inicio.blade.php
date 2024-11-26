@@ -7,6 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>REVISTA CIENTIFICA</h1>
+    <h1>REVISTA CIENTIFICA</h1> 
+    <!-- Este es mi primer commit, ya soy senior en git -->
 </body>
 </html>
