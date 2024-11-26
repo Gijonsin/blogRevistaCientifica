@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
-    <title>Inicio</title>
+    <title>Sobre la Revista</title>
 </head>
 <body>
     
@@ -45,7 +45,11 @@
     </div>
 </nav>
 <div id="content" class="container mt-4">
-    <h1>CONTENIDO INICIO</h1>
+    
+<p><strong>RENOVATEC - Revista de Divulgación Científica</strong> es una publicación científica sobre tecnología aplicada, es editada por el grupo editorial Renova Laguna del Instituto Tecnológico de la Laguna ITL, publica avances de proyectos de investigación dentro y fuera de la comunidad educativa.</p>
+<p><strong>RENOVATEC publica todos los artículos con una licencia CC-BY sin cargos por procesamiento de artículos.</strong></p>
+<p>Asimismo, nuestra revista fomenta artículos sustanciales y teóricamente novedosos, pero sobre todo propicia las contribuciones que utilizan metodologías sólidas e innovadoras.</p>
+
 </div>
 </body>
 </html>

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
-    <title>Inicio</title>
+    <title>Avisos</title>
 </head>
 <body>
     
@@ -45,7 +45,7 @@
     </div>
 </nav>
 <div id="content" class="container mt-4">
-    <h1>CONTENIDO INICIO</h1>
+    <h1>CONTENIDO AVISOS</h1>
 </div>
 </body>
 </html>
