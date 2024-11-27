@@ -33,11 +33,14 @@
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" href="{{route('acercade.vista_sobreLaRevista')}}">Sobre la Revista</a></li>
                         <li><a class="dropdown-item" href="{{route('envios.vista_envio')}}">Envios</a></li>
-                        <li><a class="dropdown-item" href="#">Directorio</a></li>
-                        <li><a class="dropdown-item" href="#">Comité Editorial</a></li>
-                        <li><a class="dropdown-item" href="#">Revisores</a></li>
-                        <li><a class="dropdown-item" href="#">Webmaster</a></li>
-                        <li><a class="dropdown-item" href="#">Editor Responsable</a></li>
+                        <li><a class="dropdown-item" href="{{route('acercade.vista_directorio')}}">Directorio</a></li>
+                        <li><a class="dropdown-item" href="{{route('acercade.vista_comite')}}">Comité Editorial</a></li>
+                        <li><a class="dropdown-item" href="{{route('acercade.vista_revisores')}}">Revisores</a></li>
+                        <li><a class="dropdown-item" href="{{route('acercade.vista_webmaster')}}">Webmaster</a></li>
+                        <li><a class="dropdown-item" href="{{route('acercade.vista_editor')}}">Editor Responsable</a></li>
+                        <li><a class="dropdown-item" href="{{route('acercade.vista_indexa')}}">Indexaciones y estándares</a></li>
+                        <li><a class="dropdown-item" href="{{route('acercade.vista_declaracion_privacidad')}}">Declaración de privacidad</a></li>
+                        <li><a class="dropdown-item" href="{{route('acercade.vista_contacto')}}">Contacto</a></li>
                     </ul>
              </li>
             </ul>

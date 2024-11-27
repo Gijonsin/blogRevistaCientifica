@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
-    <title>Envio</title>
+    <title>Comité Editorial</title>
 </head>
 <body>
     
@@ -48,30 +48,38 @@
     </div>
 </nav>
 <div id="content" class="container mt-4">
-    
-<p>El registro y el inicio de sesión son necesarios para enviar elementos en línea y para comprobar el estado de los envíos recientes.</p>
-<p>
-    <a href="{{route('usuarios.vista_login')}}" class="btn btn-primary">Iniciar sesión</a> 
-    o 
-    <a href="{{route('usuarios.vista_register')}}" class="btn btn-secondary">Registrar una nueva cuenta</a>
-</p>
-@if(!Auth::check())
-    <div class="alert alert-warning" role="alert">
-        Debes iniciar sesión para enviar un artículo.
+    <h2 class="text-center">COMITÉ EDITORIAL</h2>
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <strong>Elena Tzetzángary Aguirre Mejía</strong><br>
+                    Coordinador de Investigación
+                </li>
+                <li class="list-group-item">
+                    <strong>Abril Danae Ramírez Aguirre</strong><br>
+                    <strong>José Gabriel Robles Bautista</strong><br>
+                    Investigadores Junior
+                </li>
+                <li class="list-group-item">
+                    <strong>Michelle Martínez Machado</strong><br>
+                    Coordinadora de difusión
+                </li>
+                <li class="list-group-item">
+                    <strong>Mirza Zapata Medrano</strong><br>
+                    Coordinadora comunicación
+                </li>
+                <li class="list-group-item">
+                    <strong>Alejandra Agüero Martínez</strong><br>
+                    Coordinador Temática
+                </li>
+                <li class="list-group-item">
+                    <strong>Sergio Antonio Alvarado García</strong><br>
+                    Coordinador de Diseño
+                </li>
+            </ul>
+        </div>
     </div>
-@endif
-<form action="#" method="POST" enctype="multipart/form-data">
-    @csrf
-    <div class="mb-3">
-        <label for="titulo" class="form-label">Título del Artículo</label>
-        <input type="text" class="form-control" id="titulo" name="titulo" required>
-    </div>
-    <div class="mb-3">
-        <label for="archivo" class="form-label">Subir Archivo</label>
-        <input type="file" class="form-control" id="archivo" name="archivo" required>
-    </div>
-    <button type="submit" class="btn btn-success">Enviar Artículo</button>
-</form>
 </div>
 </body>
 </html>
