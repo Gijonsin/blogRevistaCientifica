@@ -22,3 +22,11 @@ Route::get('/sobreLaRevista',[PrincipalController::class, 'sobreLaRevista'])->na
 Route::get('/envios',[PrincipalController::class, 'envio'])->name('envios.vista_envio');
 Route::get('/login', [PrincipalController::class, 'login'])->name('usuarios.vista_login');
 Route::get('/registro', [PrincipalController::class, 'registro'])->name('usuarios.vista_register');
+Route::get('/directorio', [PrincipalController::class, 'directorio'])->name('acercade.vista_directorio');
+Route::get('/comite', [PrincipalController::class, 'comite'])->name('acercade.vista_comite');
+Route::get('/revisores', [PrincipalController::class, 'revisores'])->name('acercade.vista_revisores');
+Route::get('/webmaster', [PrincipalController::class, 'webmaster'])->name('acercade.vista_webmaster');
+Route::get('/editor', [PrincipalController::class, 'editor'])->name('acercade.vista_editor');
+Route::get('/indexa', [PrincipalController::class, 'indexa'])->name('acercade.vista_indexa');
+Route::get('/declaracion_privacidad', [PrincipalController::class, 'declaracion_privacidad'])->name('acercade.vista_declaracion_privacidad');
+Route::get('/contacto', [PrincipalController::class, 'contacto'])->name('acercade.vista_contacto');

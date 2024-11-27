@@ -38,4 +38,36 @@ class PrincipalController extends Controller
     public function registro(){
         return view('usuarios.vista_register');
     }
+
+    public function directorio(){
+        return view('acercade.vista_directorio');
+    }
+
+    public function comite(){
+        return view('acercade.vista_comite');
+    }
+
+    public function revisores(){
+        return view('acercade.vista_revisores');
+    }
+
+    public function webmaster(){
+        return view('acercade.vista_webmaster');
+    }
+
+    public function editor(){
+        return view('acercade.vista_editor');
+    }
+
+    public function indexa(){
+        return view('acercade.vista_indexa');
+    }
+
+    public function declaracion_privacidad(){
+        return view('acercade.vista_declaracion_privacidad');
+    }
+
+    public function contacto(){
+        return view('acercade.vista_contacto');
+    }
 }
