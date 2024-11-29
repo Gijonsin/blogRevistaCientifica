@@ -2,6 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PrincipalController;
+use App\Http\Controllers\ArchivoController;
+
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -16,7 +20,7 @@ use App\Http\Controllers\PrincipalController;
 
 Route::get('/', [PrincipalController::class, 'index'])->name('inicio.vista_inicio');
 Route::get('/actual',[PrincipalController::class, 'actual'])->name('actual.vista_actual');
-Route::get('/archivo',[PrincipalController::class, 'archivo'])->name('archivos.vista_archivo');
+//Route::get('/archivo',[PrincipalController::class, 'archivo'])->name('archivos.vista_archivo');
 Route::get('/avisos',[PrincipalController::class, 'aviso'])->name('avisos.vista_aviso');
 Route::get('/sobreLaRevista',[PrincipalController::class, 'sobreLaRevista'])->name('acercade.vista_sobreLaRevista');
 Route::get('/envios',[PrincipalController::class, 'envio'])->name('envios.vista_envio');
@@ -30,3 +34,10 @@ Route::get('/editor', [PrincipalController::class, 'editor'])->name('acercade.vi
 Route::get('/indexa', [PrincipalController::class, 'indexa'])->name('acercade.vista_indexa');
 Route::get('/declaracion_privacidad', [PrincipalController::class, 'declaracion_privacidad'])->name('acercade.vista_declaracion_privacidad');
 Route::get('/contacto', [PrincipalController::class, 'contacto'])->name('acercade.vista_contacto');
+
+
+
+
+Route::get('/archivo', [ArchivoController::class, 'index'])->name('archivos.vista_archivo');
+Route::get('/revistas/{id}', [ArchivoController::class, 'show'])->name('revistas.show');
+Route::get('/articulos/{id}', [ArchivoController::class, 'detalleArticulo'])->name('articulo.detalle');

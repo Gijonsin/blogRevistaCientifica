@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Revista;
 
 class PrincipalController extends Controller
 {
@@ -16,7 +17,11 @@ class PrincipalController extends Controller
     }
 
     public function archivo(){
-        return view('archivos.vista_archivo');
+        $revistas = Revista::all();
+        
+        // Pasar las revistas a la vista
+        return view('archivos.vista_archivo', compact('revistas'));
+        //return view('archivos.vista_archivo');
     }
 
     public function aviso(){
@@ -70,4 +75,14 @@ class PrincipalController extends Controller
     public function contacto(){
         return view('acercade.vista_contacto');
     }
+
+    public function mostrarRevista()
+    {
+        // Obtener todas las revistas
+        $revistas = Revista::all();
+        
+        // Pasar las revistas a la vista
+        return view('archivos.vista_archivo', compact('revistas'));
+    }
 }
+
