@@ -75,7 +75,7 @@
                     </div>
                     <div class="card-body">
                         <!-- Toasts -->
-                        @if (session('message'))
+                        {{-- @if (session('message'))
                             <div class="toast-container position-fixed bottom-0 end-0 p-3">
                                 <div class="toast align-items-center text-bg-success border-0" role="alert"
                                     aria-live="assertive" aria-atomic="true" id="successToast">
@@ -103,7 +103,7 @@
                                     </div>
                                 </div>
                             </div>
-                        @endif
+                        @endif --}}
 
                         <!-- Formulario -->
                         <form id="avisoForm" action="{{ route('avisos.store') }}" method="POST">
@@ -125,19 +125,4 @@
         </div>
     </div>
 
-    <!-- Script -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Mostrar toast si existen mensajes
-            @if (session('message'))
-                var successToast = new bootstrap.Toast(document.getElementById('successToast'));
-                successToast.show();
-            @endif
-
-            @if (session('error'))
-                var errorToast = new bootstrap.Toast(document.getElementById('errorToast'));
-                errorToast.show();
-            @endif
-        });
-    </script>
 @endsection
