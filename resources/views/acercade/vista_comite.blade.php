@@ -7,34 +7,72 @@
 <div id="content" class="container mt-4">
     <h2 class="text-center">COMITÉ EDITORIAL</h2>
     <div class="row">
-        <div class="col-md-6 offset-md-3">
-            <ul class="list-group">
-                <li class="list-group-item">
-                    <strong>Elena Tzetzángary Aguirre Mejía</strong><br>
-                    Coordinador de Investigación
-                </li>
-                <li class="list-group-item">
-                    <strong>Abril Danae Ramírez Aguirre</strong><br>
-                    <strong>José Gabriel Robles Bautista</strong><br>
-                    Investigadores Junior
-                </li>
-                <li class="list-group-item">
-                    <strong>Michelle Martínez Machado</strong><br>
-                    Coordinadora de difusión
-                </li>
-                <li class="list-group-item">
-                    <strong>Mirza Zapata Medrano</strong><br>
-                    Coordinadora comunicación
-                </li>
-                <li class="list-group-item">
-                    <strong>Alejandra Agüero Martínez</strong><br>
-                    Coordinador Temática
-                </li>
-                <li class="list-group-item">
-                    <strong>Sergio Antonio Alvarado García</strong><br>
-                    Coordinador de Diseño
-                </li>
-            </ul>
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-body d-flex align-items-center">
+                    <i class="bi bi-person-circle me-3" style="font-size: 2rem;"></i>
+                    <div>
+                        <h5 class="card-title">Elena Tzetzángary Aguirre Mejía</h5>
+                        <p class="card-text">Coordinador de Investigación</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-body d-flex align-items-center">
+                    <i class="bi bi-person-circle me-3" style="font-size: 2rem;"></i>
+                    <div>
+                        <h5 class="card-title">Abril Danae Ramírez Aguirre</h5>
+                        <h5 class="card-title">José Gabriel Robles Bautista</h5>
+                        <p class="card-text">Investigadores Junior</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-body d-flex align-items-center">
+                    <i class="bi bi-person-circle me-3" style="font-size: 2rem;"></i>
+                    <div>
+                        <h5 class="card-title">Michelle Martínez Machado</h5>
+                        <p class="card-text">Coordinadora de difusión</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-body d-flex align-items-center">
+                    <i class="bi bi-person-circle me-3" style="font-size: 2rem;"></i>
+                    <div>
+                        <h5 class="card-title">Mirza Zapata Medrano</h5>
+                        <p class="card-text">Coordinadora comunicación</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-body d-flex align-items-center">
+                    <i class="bi bi-person-circle me-3" style="font-size: 2rem;"></i>
+                    <div>
+                        <h5 class="card-title">Alejandra Agüero Martínez</h5>
+                        <p class="card-text">Coordinador Temática</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-body d-flex align-items-center">
+                    <i class="bi bi-person-circle me-3" style="font-size: 2rem;"></i>
+                    <div>
+                        <h5 class="card-title">Sergio Antonio Alvarado García</h5>
+                        <p class="card-text">Coordinador de Diseño</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

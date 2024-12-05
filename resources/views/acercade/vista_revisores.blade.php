@@ -4,14 +4,70 @@
 
 @section('content')
 <div id="content" class="container mt-4">
-    <h2 class="text-center">REVISORES</h2>
-    <ul class="list-group">
-        <li class="list-group-item">Idalia Ruiz Arroyo</li>
-        <li class="list-group-item">Ruth de la Peña Martínez</li>
-        <li class="list-group-item">José Dolores Ruíz Ayala</li>
-        <li class="list-group-item">Rocío Yadira Gómez Guerrero</li>
-        <li class="list-group-item">Silvia Viridiana Parada Ávila</li>
-        <li class="list-group-item">Lilia Parada Morado</li>
-    </ul>
+    <div class="title h1 text-center">Revisores</div>
+    <div class="row">
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-body d-flex align-items-center">
+                    <i class="bi bi-person-circle me-3" style="font-size: 2rem;"></i>
+                    <div>
+                        <h5 class="card-title">Lilia Parada Morado</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-body d-flex align-items-center">
+                    <i class="bi bi-person-circle me-3" style="font-size: 2rem;"></i>
+                    <div>
+                        <h5 class="card-title">Idalia Ruiz Arroyo</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-body d-flex align-items-center">
+                    <i class="bi bi-person-circle me-3" style="font-size: 2rem;"></i>
+                    <div>
+                        <h5 class="card-title">Ruth de la Peña Martínez</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-body d-flex align-items-center">
+                    <i class="bi bi-person-circle me-3" style="font-size: 2rem;"></i>
+                    <div>
+                        <h5 class="card-title">José Dolores Ruíz Ayala</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-body d-flex align-items-center">
+                    <i class="bi bi-person-circle me-3" style="font-size: 2rem;"></i>
+                    <div>
+                        <h5 class="card-title">Rocío Yadira Gómez Guerrero</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-body d-flex align-items-center">
+                    <i class="bi bi-person-circle me-3" style="font-size: 2rem;"></i>
+                    <div>
+                        <h5 class="card-title">Silvia Viridiana Parada Ávila</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Añade más tarjetas para otros revisores aquí -->
+    </div>
 </div>
 @endsection

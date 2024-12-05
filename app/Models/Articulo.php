@@ -17,7 +17,7 @@ class Articulo extends Model
         'RESUMEN_ARTICULOS',
         'PALABRAS_ARTICULOS',
         'FECHA_ARTICULOS',
-        'REVISTA_ARTICULOS',
+        'ESTADO_ARTICULOS', 
         'DOI_ARTICULOS',
         'URL_ARTICULOS',
     ];
