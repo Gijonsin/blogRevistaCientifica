@@ -98,35 +98,15 @@
             </div>
         </div>
     </nav>
-    
-    @if (session('message'))
-        <div class="toast-container position-fixed bottom-0 end-0 p-3">
-            <div class="toast align-items-center text-bg-success border-0" role="alert" aria-live="assertive"
-                aria-atomic="true">
-                <div class="d-flex">
-                    <div class="toast-body">
-                        {{ session('message') }}
-                    </div>
-                    <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
-                        aria-label="Close"></button>
-                </div>
-            </div>
-        </div>
-    @endif
 
-    @if (session('error'))
-        <div class="toast-container position-fixed bottom-0 end-0 p-3">
-            <div class="toast align-items-center text-bg-danger border-0" role="alert" aria-live="assertive"
-                aria-atomic="true">
-                <div class="d-flex">
-                    <div class="toast-body">
-                        {{ session('error') }}
-                    </div>
-                    <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
-                        aria-label="Close"></button>
-                </div>
-            </div>
-        </div>
+    @if (Session::has('message'))
+        <script>
+            window.sessionMessage = "{!! Session::get('message') !!}";
+        </script>
+    @elseif (Session::has('error'))
+        <script>
+            window.sessionError = "{!! Session::get('error') !!}";
+        </script>
     @endif
 
     <!-- Contenido dinámico -->
@@ -183,18 +163,6 @@
         </div>
         <!-- Copyright -->
     </footer>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var toastElList = [].slice.call(document.querySelectorAll('.toast'))
-            var toastList = toastElList.map(function(toastEl) {
-                return new bootstrap.Toast(toastEl, {
-                    delay: 5000
-                });
-            });
-            toastList.forEach(toast => toast.show());
-        });
-    </script>
 </body>
 
 </html>
