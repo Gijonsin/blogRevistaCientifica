@@ -42,7 +42,8 @@ class AvisoController extends Controller
     public function index()
     {
         // Obtiene todos los avisos ordenados por fecha de creación, opcionalmente
-        $avisos = Aviso::orderBy('CREADO_AVISOS', 'desc')->get();
+        // $avisos = Aviso::orderBy('CREADO_AVISOS', 'desc')->get();
+        $avisos = Aviso::orderBy('CREADO_AVISOS', 'desc')->paginate(10);
 
         return view('avisos.vista_aviso', compact('avisos'));
     }

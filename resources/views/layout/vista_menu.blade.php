@@ -7,61 +7,73 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('title', 'RENOVATEC')</title>
     {{-- @vite(['resources/sass/app.scss', 'resources/js/app.js', 'resources/sass/custom.scss', 'resources/js/quill-editor.js']) --}}
-    @vite(['resources/sass/app.scss', 'resources/js/app.js', 'resources/js/quill-editor.js'])
+    @vite(['resources/css/app.css', 'resources/sass/app.scss', 'resources/js/app.js', 'resources/js/quill-editor.js'])
 </head>
 
 <body class="d-flex flex-column min-vh-100">
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <!-- Bloque azul -->
+    <div class="custom-bg-blue text-white text-center py-2">
+        <h1>Bienvenido a RENOVATEC</h1>
+    </div>
+
+    <div class="custom-bg-white text-white text-center py-2">
+        
+    </div>
+    <nav class="navbar navbar-expand-lg custom-navbar">
         <div class="container-fluid">
-            <a class="navbar-brand disabled-link">PULSO TEC</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{{ route('actual.vista_actual') }}"
-                            id="link-actual">Actual</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('archivos.vista_archivo') }}">Archivos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('avisos.index') }}">Avisos</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Acerca de
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="{{ route('acercade.vista_sobreLaRevista') }}">Sobre la
-                                    Revista</a></li>
-                            <li><a class="dropdown-item" href="{{ route('envios.vista_envio') }}">Envios</a></li>
-                            <li><a class="dropdown-item" href="{{ route('acercade.vista_directorio') }}">Directorio</a>
-                            </li>
-                            <li><a class="dropdown-item" href="{{ route('acercade.vista_comite') }}">Comité
-                                    Editorial</a></li>
-                            <li><a class="dropdown-item" href="{{ route('acercade.vista_revisores') }}">Revisores</a>
-                            </li>
-                            <li><a class="dropdown-item" href="{{ route('acercade.vista_webmaster') }}">Equipo de
-                                    Desarrollo</a>
-                            </li>
-                            <li><a class="dropdown-item" href="{{ route('acercade.vista_editor') }}">Editor
-                                    Responsable</a></li>
-                            <li><a class="dropdown-item" href="{{ route('acercade.vista_indexa') }}">Indexaciones y
-                                    estándares</a></li>
-                            <li><a class="dropdown-item"
-                                    href="{{ route('acercade.vista_declaracion_privacidad') }}">Declaración de
-                                    privacidad</a></li>
-                            <li><a class="dropdown-item" href="{{ route('acercade.vista_contacto') }}">Contacto</a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-                <ul class="navbar-nav ms-auto">
+                <div class="container">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="{{ route('actual.vista_actual') }}"
+                                id="link-actual">Actual</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('archivos.vista_archivo') }}">Archivos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('avisos.index') }}">Avisos</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Acerca de
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="{{ route('acercade.vista_sobreLaRevista') }}">Sobre
+                                        la
+                                        Revista</a></li>
+                                <li><a class="dropdown-item" href="{{ route('envios.vista_envio') }}">Envios</a></li>
+                                <li><a class="dropdown-item"
+                                        href="{{ route('acercade.vista_directorio') }}">Directorio</a>
+                                </li>
+                                <li><a class="dropdown-item" href="{{ route('acercade.vista_comite') }}">Comité
+                                        Editorial</a></li>
+                                <li><a class="dropdown-item"
+                                        href="{{ route('acercade.vista_revisores') }}">Revisores</a>
+                                </li>
+                                <li><a class="dropdown-item" href="{{ route('acercade.vista_webmaster') }}">Equipo de
+                                        Desarrollo</a>
+                                </li>
+                                <li><a class="dropdown-item" href="{{ route('acercade.vista_editor') }}">Editor
+                                        Responsable</a></li>
+                                <li><a class="dropdown-item" href="{{ route('acercade.vista_indexa') }}">Indexaciones y
+                                        estándares</a></li>
+                                <li><a class="dropdown-item"
+                                        href="{{ route('acercade.vista_declaracion_privacidad') }}">Declaración de
+                                        privacidad</a></li>
+                                <li><a class="dropdown-item" href="{{ route('acercade.vista_contacto') }}">Contacto</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <ul class="navbar-nav me-auto">
                     @guest
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('usuarios.vista_login') }}">Iniciar Sesión</a>
@@ -71,9 +83,9 @@
                         </li>
                     @else
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="navbarDropdown" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="bi bi-person-circle me-3" style="font-size: 2rem;"></i>
+                                <i class="fas fa-user-circle me-3" style="font-size: 2rem;"></i>
                                 {{ Auth::user()->name }}
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
@@ -110,7 +122,7 @@
     @endif
 
     <!-- Contenido dinámico -->
-    <main class="flex-grow-1 container mt-4">
+    <main class="flex-grow-1 container mt-4 mb-5">
         @yield('content')
     </main>
 
@@ -155,13 +167,6 @@
             <!-- Section: Form -->
         </div>
         <!-- Grid container -->
-
-        <!-- Copyright -->
-        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
-            © 2020 Copyright:
-            <a class="text-body" href="https://mdbootstrap.com/">MDBootstrap.com</a>
-        </div>
-        <!-- Copyright -->
     </footer>
 </body>
 

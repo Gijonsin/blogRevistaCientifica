@@ -1,0 +1,129 @@
+/* botones.css */
+
+/* Botón primario */
+.btn-primary-custom {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-primary-custom:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Botón secundario */
+.btn-secondary-custom {
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-secondary-custom:hover {
+    background-color: #5a6268;
+    transform: scale(1.05);
+}
+
+/* Botón de éxito */
+.btn-success-custom {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-success-custom:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+
+/* Botón de advertencia */
+.btn-warning-custom {
+    background-color: #ffc107;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-warning-custom:hover {
+    background-color: #e0a800;
+    transform: scale(1.05);
+}
+
+/* Botón de peligro */
+.btn-danger-custom {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-danger-custom:hover {
+    background-color: #c82333;
+    transform: scale(1.05);
+}
+
+/* Botón de información */
+.btn-info-custom {
+    background-color: #17a2b8;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-info-custom:hover {
+    background-color: #138496;
+    transform: scale(1.05);
+}
+
+/* Botón de luz */
+.btn-light-custom {
+    background-color: #f8f9fa;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-light-custom:hover {
+    background-color: #e2e6ea;
+    transform: scale(1.05);
+}
+
+/* Botón oscuro */
+.btn-dark-custom {
+    background-color: #343a40;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-dark-custom:hover {
+    background-color: #23272b;
+    transform: scale(1.05);
+}

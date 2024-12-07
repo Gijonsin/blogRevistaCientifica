@@ -67,7 +67,7 @@ Route::post('subscribir', [SubscriptionController::class, 'store'])->name('subsc
 // Route::get('/avisos/{id}', [AvisoController::class, 'show'])->name('avisos.show');
 
 // Ruta para mostrar el formulario de creación de avisos (GET)
-Route::get('/avisos/crear', [AvisoController::class, 'create'])->name('avisos.create');
+Route::get('/avisos/crear', [AvisoController::class, 'create'])->name('avisos.create')->middleware('auth');
 
 // Ruta para almacenar el aviso (POST)
 Route::post('/avisos', [AvisoController::class, 'store'])->name('avisos.store');
@@ -77,3 +77,17 @@ Route::get('/avisos/{id}', [AvisoController::class, 'show'])->name('avisos.show'
 
 // Ruta para mostrar todos los avisos (GET)
 Route::get('/avisos', [AvisoController::class, 'index'])->name('avisos.index');
+
+
+// Admin
+//Route::get('/admin/inicio', [ArchivoController::class, 'adminIndex'])->name('admin.inicio')->middleware('auth');
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/admin/inicio', [ArchivoController::class, 'adminIndex'])->name('admin.archivos.index');
+    Route::get('/admin/archivos/{id}', [ArchivoController::class, 'adminShow'])->name('admin.archivos.show');
+    //Route::get('/admin/inicio', [AdminController::class, 'index'])->name('admin.inicio');
+    //Route::get('/envios/{revista_id}', [ArchivoController::class, 'create'])->name('envios.vista_envio');
+    //Route::get('/avisos/crear', [AvisoController::class, 'create'])->name('avisos.create');
+    //Route::get('/paginas', [PaginaController::class, 'index'])->name('paginas.index');
+    //Route::get('/cuenta/detalles', [CuentaController::class, 'detalles'])->name('cuenta.detalles');
+});

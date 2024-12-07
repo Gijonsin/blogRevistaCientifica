@@ -55,11 +55,23 @@ class ArchivoController extends Controller
         return view('archivos.vista_archivo', compact('archivos'));
     }
 
+    public function adminIndex()
+    {
+        $archivos = Archivo::with('articulos')->paginate(5); // Obtiene revistas con sus artículos
+        return view('admin.vista_inicio', compact('archivos'));
+    }
+
     // Mostrar una revista específica con sus artículos asociados
     public function show($id)
     {
         $archivo = Archivo::with('articulos')->findOrFail($id);
         return view('archivos.vista_revista', compact('archivo'));
+    }
+
+    public function adminShow($id)
+    {
+        $archivo = Archivo::with('articulos')->findOrFail($id);
+        return view('admin.vista_revista', compact('archivo'));
     }
 
     public function detalleArticulo($id)
@@ -109,7 +121,9 @@ class ArchivoController extends Controller
     public function vistaActual()
     {
         $archivo = Archivo::orderBy('FECHA_REVISTAS', 'desc')->first();
+        //$articulo = $archivo->articulos()->orderBy('FECHA_ARTICULOS', 'desc')->first();
 
-        return view('actual.vista_actual', compact('archivo'));
+        //return view('actual.vista_actual', compact('archivo'));
+        return redirect()->route('revistas.show', $archivo->ID_REVISTAS);
     }
 }
