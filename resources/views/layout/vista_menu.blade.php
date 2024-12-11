@@ -111,15 +111,7 @@
         </div>
     </nav>
 
-    @if (Session::has('message'))
-        <script>
-            window.sessionMessage = "{!! Session::get('message') !!}";
-        </script>
-    @elseif (Session::has('error'))
-        <script>
-            window.sessionError = "{!! Session::get('error') !!}";
-        </script>
-    @endif
+    44
 
     <!-- Contenido dinámico -->
     <main class="flex-grow-1 container mt-4 mb-5">

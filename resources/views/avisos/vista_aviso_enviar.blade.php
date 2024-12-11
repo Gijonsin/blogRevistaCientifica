@@ -1,4 +1,5 @@
-@extends('layout.vista_menu')
+{{-- @extends('layout.vista_menu') --}}
+@extends('layout.vista_menu_admin')
 
 @section('title', 'Subir Aviso')
 
@@ -21,7 +22,7 @@
                             </div>
                             <div class="mb-3">
                                 <label for="contenido" class="form-label">Contenido del Aviso</label>
-                                <div id="editor" style="height: 300px; border: 1px solid #ccc;"></div>
+                                <div id="editor" style="height: 400px; border: 1px solid #ccc;"></div>
                                 <input type="hidden" id="contenido" name="contenido">
                             </div>
                             <button type="submit" class="btn btn-success">Subir Aviso</button>

@@ -11,7 +11,7 @@
                 Accede a tu cuenta existente o crea una nueva cuenta.
             </div>
         @else
-            <div class="container mt-4">
+            ´p+.-,kl<div class="container mt-4">
                 <div class="row justify-content-center">
                     <div class="col-md-8">
                         <div class="card">

@@ -3,8 +3,11 @@
 use Illuminate\Support\Facades\Facade;
 use Illuminate\Support\ServiceProvider;
 
+
+
 return [
 
+    'locale' => 'es',
     /*
     |--------------------------------------------------------------------------
     | Application Name

@@ -81,7 +81,8 @@ class LoginController extends Controller
 
         if (Auth::attempt($credentials, $remember)) {
             $request->session()->regenerate();
-            return redirect()->intended(route('envios.vista_envio'));
+            // return redirect()->intended(route('envios.vista_envio'));
+            return redirect()->intended(route('admin.archivos.index'));
         }
 
         // return back()->withErrors([
