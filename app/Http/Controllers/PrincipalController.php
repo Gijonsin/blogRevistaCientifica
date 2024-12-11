@@ -16,13 +16,13 @@ class PrincipalController extends Controller
         return view('actual.vista_actual');
     }
 
-    public function archivo(){
-        $revistas = Revista::all();
+    // public function archivo(){
+    //     $revistas = Revista::all();
         
-        // Pasar las revistas a la vista
-        return view('archivos.vista_archivo', compact('revistas'));
-        //return view('archivos.vista_archivo');
-    }
+    //     // Pasar las revistas a la vista
+    //     return view('archivos.vista_archivo', compact('revistas'));
+    //     //return view('archivos.vista_archivo');
+    // }
 
     public function aviso(){
         return view('avisos.vista_aviso');
@@ -76,13 +76,13 @@ class PrincipalController extends Controller
         return view('acercade.vista_contacto');
     }
 
-    public function mostrarRevista()
-    {
-        // Obtener todas las revistas
-        $revistas = Revista::all();
+    // public function mostrarRevista()
+    // {
+    //     // Obtener todas las revistas
+    //     $revistas = Revista::all();
         
-        // Pasar las revistas a la vista
-        return view('archivos.vista_archivo', compact('revistas'));
-    }
+    //     // Pasar las revistas a la vista
+    //     return view('archivos.vista_archivo', compact('revistas'));
+    // }
 }
 

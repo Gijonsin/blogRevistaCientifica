@@ -1,0 +1,43 @@
+:root {
+    --color_1: #fff;
+    --color_2: #1B396A;
+}
+
+.custom-bg-blue {
+    background-color: var(--color_2); /* Reemplaza este valor con tu color hexadecimal */
+    color: var(--color_1);
+}
+
+.custom-bg-white {
+    background-color: var(--color_1); /* Reemplaza este valor con tu color hexadecimal */
+    color: var(--color_1);
+}
+
+.custom-navbar {
+    background-color: var(--color_2); /* Color azul */
+    color: var(--color_1);
+}
+
+.custom-navbar .nav-link,
+.custom-navbar .navbar-brand,
+.custom-navbar .navbar-toggler-icon {
+    color: var(--color_1);
+    transition: color 0.3s, background-color 0.3s, border-radius 0.4s; /* Transición suave */
+}
+
+.custom-navbar .nav-link:hover,
+.custom-navbar .navbar-brand:hover {
+    color: var(--color_2); /* Color azul claro para hover */
+    background-color: var(--color_1);
+    border-radius: 10px;
+}
+
+.custom-navbar .dropdown-item {
+    transition: color 0.3s, background-color 0.3s, border-radius 0.4s;/* Transición suave */
+}
+
+.custom-navbar .dropdown-item:hover {
+    color: var(--color_1); /* Color azul */
+    background-color: var(--color_2);
+    border-radius: 10px;
+}

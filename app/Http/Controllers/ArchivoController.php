@@ -26,6 +26,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Archivo;
+use App\Models\Articulo;
 use Illuminate\Http\Request;
 
 // class ArchivoController extends Controller
@@ -54,11 +55,23 @@ class ArchivoController extends Controller
         return view('archivos.vista_archivo', compact('archivos'));
     }
 
+    public function adminIndex()
+    {
+        $archivos = Archivo::with('articulos')->paginate(5); // Obtiene revistas con sus artículos
+        return view('admin.vista_inicio', compact('archivos'));
+    }
+
     // Mostrar una revista específica con sus artículos asociados
     public function show($id)
     {
         $archivo = Archivo::with('articulos')->findOrFail($id);
         return view('archivos.vista_revista', compact('archivo'));
+    }
+
+    public function adminShow($id)
+    {
+        $archivo = Archivo::with('articulos')->findOrFail($id);
+        return view('admin.vista_revista', compact('archivo'));
     }
 
     public function detalleArticulo($id)
@@ -77,5 +90,40 @@ class ArchivoController extends Controller
         }
     
         return view('archivos.vista_articulo', compact('articulo'));
+    }
+
+    public function store(Request $request)
+    {
+        // Validar los datos enviados desde el formulario
+        $validated = $request->validate([
+            'ISSN_ARTICULOS' => 'required|max:9|unique:articulos',
+            'TITULO_ARTICULOS' => 'required|string|max:255',
+            'RESUMEN_ARTICULOS' => 'required|string',
+            'PALABRAS_ARTICULOS' => 'nullable|string',
+            'FECHA_ARTICULOS' => 'required|date',
+            'ESTADO_ARTICULOS' => 'required|in:pendiente,publicado,rechazado',
+            'DOI_ARTICULOS' => 'required|string',
+            'URL_ARTICULOS' => 'required|url',
+        ]);
+
+        // Crear el nuevo artículo
+        Articulo::create($validated);
+
+        // Redirigir a una página adecuada (por ejemplo, listado de artículos)
+        return redirect()->route('envios.vista_envio')->with('success', 'Artículo enviado con éxito.');
+    }
+
+    public function create()
+    {
+        return view('envios.vista_envio'); // Cambia por el nombre de tu vista Blade
+    }
+
+    public function vistaActual()
+    {
+        $archivo = Archivo::orderBy('FECHA_REVISTAS', 'desc')->first();
+        //$articulo = $archivo->articulos()->orderBy('FECHA_ARTICULOS', 'desc')->first();
+
+        //return view('actual.vista_actual', compact('archivo'));
+        return redirect()->route('revistas.show', $archivo->ID_REVISTAS);
     }
 }

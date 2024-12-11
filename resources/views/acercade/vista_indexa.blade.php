@@ -4,6 +4,6 @@
 
 @section('content')
 <div id="content" class="container mt-4">
-    <h1>Por lo pronto, solo tenemos Google académico, Researchgate, </h1>
+    <h1>Por lo pronto, solo tenemos Google académico, Researchgate</h1>
 </div>
 @endsection

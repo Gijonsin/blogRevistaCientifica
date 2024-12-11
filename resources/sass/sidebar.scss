@@ -1,0 +1,40 @@
+// Variables
+$sidebar-width-expanded: 250px;
+$sidebar-width-collapsed: 70px;
+
+// Sidebar
+.sidebar {
+    width: $sidebar-width-expanded;
+    transition: width 0.3s;
+
+    &.collapsed {
+        width: $sidebar-width-collapsed;
+    }
+
+    .nav-link {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        overflow: hidden;
+        white-space: nowrap;
+        transition: all 0.3s;
+
+        span {
+            display: inline-block;
+        }
+    }
+
+    &.collapsed .nav-link span {
+        display: none; // Esconde el texto al colapsar
+    }
+
+    &.collapsed .nav-link {
+        justify-content: center; // Centra los iconos
+    }
+}
+
+// Contenido principal
+.content {
+    flex-grow: 1;
+    padding: 1rem;
+}
