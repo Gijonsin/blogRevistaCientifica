@@ -6,6 +6,7 @@ use App\Http\Controllers\ArchivoController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\SubscriptionController;
 use App\Http\Controllers\AvisoController;
+use App\Http\Controllers\InvestigadorController;
 
 
 
@@ -53,34 +54,31 @@ Route::get('/articulos/{id}', [ArchivoController::class, 'detalleArticulo'])->na
 Route::get('/envios', [ArchivoController::class, 'create'])->name('envios.vista_envio'); // Muestra el formulario
 Route::post('/envios', [ArchivoController::class, 'store'])->name('envios.store');  // Procesa el formulario
 
+Route::post('subscribir', [SubscriptionController::class, 'store'])->name('subscribir');
+
+// ----------------- Rutas para los usuarios -----------------
 Route::view('/iniciar-sesion', 'usuarios.vista_login')->name('usuarios.vista_login');
 Route::view('/registro', 'usuarios.vista_register')->name('usuarios.vista_register');
-
 Route::post('validar-registro', [LoginController::class, 'register'])->name('validar-registro');
 Route::post('inicia-sesion', [LoginController::class, 'login'])->name('inicia-sesion');
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
-Route::post('subscribir', [SubscriptionController::class, 'store'])->name('subscribir');
+//Route::view('/informacion', 'usuarios.vista_informacion')->name('usuarios.vista_informacion');
+Route::get('/informacion', [InvestigadorController::class, 'create'])->name('usuarios.vista_informacion');
+Route::post('/informacion', [InvestigadorController::class, 'store'])->name('investigador.store');
 
-// Route::get('/avisos/crear', [AvisoController::class, 'create'])->name('avisos.create');
-// Route::post('/avisos', [AvisoController::class, 'store'])->name('avisos.store');
-// Route::get('/avisos/{id}', [AvisoController::class, 'show'])->name('avisos.show');
+// -----------------------------------------------------------
 
-// Ruta para mostrar el formulario de creación de avisos (GET)
+// ----------------- Rutas para los avisos -----------------
+
 Route::get('/avisos/crear', [AvisoController::class, 'create'])->name('avisos.create')->middleware('auth');
-
-// Ruta para almacenar el aviso (POST)
 Route::post('/avisos', [AvisoController::class, 'store'])->name('avisos.store');
-
-// Ruta para mostrar un aviso específico (GET)
 Route::get('/avisos/{id}', [AvisoController::class, 'show'])->name('avisos.show');
-
-// Ruta para mostrar todos los avisos (GET)
 Route::get('/avisos', [AvisoController::class, 'index'])->name('avisos.index');
 
 
-// Admin
-//Route::get('/admin/inicio', [ArchivoController::class, 'adminIndex'])->name('admin.inicio')->middleware('auth');
+
+//----------------- Rutas para los investigadores -----------------
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/admin/inicio', [ArchivoController::class, 'adminIndex'])->name('admin.archivos.index');
