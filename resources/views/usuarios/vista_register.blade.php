@@ -7,7 +7,7 @@
     <div class="container py-5 h-100">
         <div class="row d-flex align-items-center justify-content-center h-100">
             <div class="col-md-8 col-lg-7 col-xl-6">
-                <img src="{{ asset('images/Registrar.svg') }}" class="img-fluid" alt="Phone image">
+                <img src="{{ asset('images/Registro.svg') }}" class="img-fluid" alt="Phone image">
             </div>
             <div class="col-md-10 col-lg-5 col-xl-5">
                 <div class="card">
@@ -16,11 +16,34 @@
                         <form id="registerForm" action="{{ route('validar-registro') }}" method="POST">
                             @csrf
 
+                            {{-- Informacion del investigador  --}}
+                            <div class="form-floating mb-4">
+                                <input type="text" class="form-control form-control-lg" id="nombre" name="nombre"
+                                    placeholder=" " required>
+                                <label for="nombre">Nombre(s)</label>
+                            </div>
+
+                            <div class="form-floating mb-4">
+                                <input type="text" class="form-control form-control-lg" id="apellido" name="apellido"
+                                    placeholder=" " required>
+                                <label for="apellido">Apellidos</label>
+                            </div>
+
+                            <input type="hidden" class="form-control form-control-lg" id="universidad" name="universidad"
+                                value="Instituto Tecnológico de La Laguna">
+
+                            <div class="form-floating mb-4">
+                                <input type="url" class="form-control form-control-lg" id="orcid" name="orcid"
+                                    placeholder=" " required>
+                                <label for="orcid">ORCID</label>
+                            </div>
+
                             <div class="form-floating mb-4">
                                 <input type="text" class="form-control" id="name" name="name" placeholder=" "
                                     required>
                                 <label for="name">Usuario</label>
                             </div>
+
                             <div class="form-floating mb-4">
                                 <input type="email" class="form-control" id="email" name="email" placeholder=" "
                                     required>

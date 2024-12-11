@@ -111,8 +111,6 @@
         </div>
     </nav>
 
-    44
-
     <!-- Contenido dinámico -->
     <main class="flex-grow-1 container mt-4 mb-5">
         @yield('content')

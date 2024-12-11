@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use App\Models\Investigador;
 
 class LoginController extends Controller
 {
@@ -33,6 +34,15 @@ class LoginController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password)
+        ]);
+
+        // Crear el investigador
+        Investigador::create([
+            'NOMBRE_INVESTIGADORES' => $request->nombre,
+            'APELLIDO_INVESTIGADORES' => $request->apellido,
+            'UNIVERSIDAD_INVESTIGADORES' => $request->universidad,
+            'ORCID_INVESTIGADORES' => $request->orcid,
+            'ID_USERS' => $user->id,
         ]);
 
         Auth::login($user);
