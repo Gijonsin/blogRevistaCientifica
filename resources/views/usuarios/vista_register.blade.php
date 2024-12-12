@@ -32,6 +32,10 @@
                             <input type="hidden" class="form-control form-control-lg" id="universidad" name="universidad"
                                 value="Instituto Tecnológico de La Laguna">
 
+                            <input type="hidden" class="form-control form-control-lg" id="rol" name="rol"
+                            value="usuario">
+
+
                             <div class="form-floating mb-4">
                                 <input type="url" class="form-control form-control-lg" id="orcid" name="orcid"
                                     placeholder=" " required>

@@ -22,7 +22,7 @@ use App\Http\Controllers\InvestigadorController;
 |
 */
 
-Route::get('/', [PrincipalController::class, 'index'])->name('inicio.vista_inicio');
+Route::get('/', [ArchivoController::class, 'vistaActual'])->name('inicio.vista_inicio');
 Route::get('/actual',[ArchivoController::class, 'vistaActual'])->name('actual.vista_actual');
 //Route::get('/archivo',[PrincipalController::class, 'archivo'])->name('archivos.vista_archivo');
 Route::get('/avisos',[PrincipalController::class, 'aviso'])->name('avisos.vista_aviso');

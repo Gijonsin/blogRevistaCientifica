@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Models\Investigador;
+use App\Models\Role;
 
 class LoginController extends Controller
 {
@@ -43,6 +44,11 @@ class LoginController extends Controller
             'UNIVERSIDAD_INVESTIGADORES' => $request->universidad,
             'ORCID_INVESTIGADORES' => $request->orcid,
             'ID_USERS' => $user->id,
+        ]);
+
+        Role::create([
+            'NOMBRE_ROLES' => $request->rol,
+            'ID_USERS' => $user->id
         ]);
 
         Auth::login($user);
@@ -91,8 +97,17 @@ class LoginController extends Controller
 
         if (Auth::attempt($credentials, $remember)) {
             $request->session()->regenerate();
-            // return redirect()->intended(route('envios.vista_envio'));
-            return redirect()->intended(route('admin.archivos.index'));
+            
+            //Obtener el rol del usuario autenticado
+            $role = Auth::user()->role->NOMBRE_ROLES;
+
+            //Redirigir al usuario segun su rol
+            if($role == 'usuario'){
+                return redirect()->intended(route('envios.vista_envio'));
+            }else if($role == 'admin' || $role == 'revisor'){
+                return redirect()->intended(route('admin.archivos.index'));
+            }
+            //return redirect()->intended(route('admin.archivos.index'));
         }
 
         // return back()->withErrors([

@@ -110,6 +110,15 @@
             </div>
         </div>
     </nav>
+    @if (Session::has('message'))
+        <script>
+            window.sessionMessage = "{!! Session::get('message') !!}";
+        </script>
+    @elseif (Session::has('error'))
+        <script>
+            window.sessionError = "{!! Session::get('error') !!}";
+        </script>
+    @endif
 
     <!-- Contenido dinámico -->
     <main class="flex-grow-1 container mt-4 mb-5">
@@ -121,7 +130,7 @@
         <div class="container p-4 pb-0">
             <!-- Section: Form -->
             <section class="">
-                <form action="">
+                <form id="subscriptionForm">
                     <!--Grid row-->
                     <div class="row d-flex justify-content-center">
                         <!--Grid column-->
@@ -136,8 +145,8 @@
                         <div class="col-md-5 col-12">
                             <!-- Email input -->
                             <div data-mdb-input-init class="form-outline mb-4">
-                                <input type="email" id="form5Example26" class="form-control" />
-                                <label class="form-label" for="form5Example26">Correo electrónico</label>
+                                <input type="email" id="email" class="form-control" />
+                                <label class="form-label" for="email">Correo electrónico</label>
                             </div>
                         </div>
                         <!--Grid column-->
@@ -158,6 +167,40 @@
         </div>
         <!-- Grid container -->
     </footer>
+
+    <script>
+        document.getElementById('subscriptionForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const email = document.getElementById('email').value;
+            if (validateEmail(email)) {
+                // Enviar el correo al backend
+                fetch('/subscribe', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                    },
+                    body: JSON.stringify({ email: email })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    alert(data.message);
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+            } else {
+                alert('Por favor, ingrese un correo electrónico válido.');
+            }
+        });
+    
+        function validateEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(String(email).toLowerCase());
+        }
+    </script>
+
+
 </body>
 
 </html>
